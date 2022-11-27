@@ -78,6 +78,16 @@ a {
   }
 }
 
+.link {
+  color: $thirdAdditionalColor;
+  text-decoration: none;
+
+  &--big {
+    font-size: 1.275rem;
+    font-weight: $fontBold;
+  }
+}
+
 .btn-custom {
   @include text-wide();
   box-sizing: border-box;
@@ -208,6 +218,48 @@ a {
   }
 }
 
+.data {
+  background-color: $secondAdditionalColor;
+  padding-top: $sectionPadding;
+  padding-bottom: calc(#{$sectionPadding} + 2rem);
+  font-size: 0.875rem;
+  line-height: 1.57;
+  color: $footerParagraphColor;
+
+  &__content {
+    margin-top: 1.875rem;
+
+    img {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  .col:first-child {
+    opacity: 0.2;
+  }
+  
+  .col + address {
+    p {
+      &:first-of-type {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .title {
+    color: rgba($secondTextColor, 0.4);
+  }
+
+  .tweet-date {
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+    line-height: 2.09;
+    letter-spacing: 1.1px;
+    color: #545158;
+  }
+}
+
 @media (max-width: 1199.98px) {
   .boxes--single {
     .box {
@@ -222,10 +274,7 @@ a {
 }
 @media (max-width: 991.98px) {
   .follow-us {
-    &__social-media {
-      justify-content: center;
-    }
-    &__newsletter {
+    &__social-media, &__newsletter {
       justify-content: center;
     }
   }
@@ -237,10 +286,7 @@ a {
 }
 @media (max-width: 575.98px) {
   .follow-us {
-    &__social-media {
-      flex-direction: column;
-    }
-    &__newsletter {
+    &__social-media, &__newsletter {
       flex-direction: column;
     }
   }
