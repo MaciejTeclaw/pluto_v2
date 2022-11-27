@@ -94,6 +94,7 @@ a {
   border: solid 2px #ccc;
   border-radius: 3px;
   padding: 11px 18px;
+
   &__big {
     padding: 15px 30px;
   }
@@ -105,9 +106,6 @@ a {
   align-items: flex-start;
   gap: 1.25rem;
   margin-bottom: 1.875rem;
-
-  &__icon {
-  }
 
   &__image {
     flex: 1;
@@ -129,6 +127,36 @@ a {
   }
 }
 
+.breadcrumbs {
+  background-color: $firstAdditionalColor;
+  padding-top: 2.25rem;
+  padding-bottom: 2.5rem;
+
+  &__container nav {
+    justify-content: flex-end;
+  }
+
+  .subtitle--big {
+    color: $secondTextColor;
+  }
+
+  .breadcrumb {
+    margin-bottom: 0;
+    color: $secondTextColor;
+    font-size: $additionalFontSize;
+    padding-left: 0.25rem;
+
+    &-item + .active {
+      color: rgba($secondTextColor, 0.4);
+
+      &:before {
+        color: rgba($secondTextColor, 0.4);
+        padding-right: 0.25rem;
+      }
+    }
+  }
+}
+
 .boxes {
   background-color: $secondBgColor;
   padding-top: $sectionPadding;
@@ -136,6 +164,8 @@ a {
   margin-top: $sectionPadding;
 
   &--single {
+    padding-top: $sectionPadding;
+
     .box {
       gap: 1.875rem;
 
@@ -175,6 +205,7 @@ a {
   gap: 3.125rem;
   font-size: 1.25rem;
   color: $titleColor;
+  text-align: center;
 }
 
 .follow-us {
@@ -237,7 +268,7 @@ a {
   .col:first-child {
     opacity: 0.2;
   }
-  
+
   .col + address {
     p {
       &:first-of-type {
@@ -274,19 +305,32 @@ a {
 }
 @media (max-width: 991.98px) {
   .follow-us {
-    &__social-media, &__newsletter {
+    &__social-media,
+    &__newsletter {
       justify-content: center;
     }
   }
 }
 @media (max-width: 767.98px) {
+  .breadcrumbs {
+    &__container {
+      flex-direction: column;
+      gap: 0.75rem;
+
+      nav {
+        justify-content: flex-start;
+      }
+    }
+  }
+
   .purchase {
     flex-direction: column;
   }
 }
 @media (max-width: 575.98px) {
   .follow-us {
-    &__social-media, &__newsletter {
+    &__social-media,
+    &__newsletter {
       flex-direction: column;
     }
   }
