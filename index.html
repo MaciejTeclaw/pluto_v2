@@ -10,60 +10,56 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-		<!-- <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>		<script src="https://kit.fontawesome.com/f32579ab4b.js" crossorigin="anonymous"></script>
-		<!-- <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script> -->
 		<script src="/dist/js/script.js"></script>
 	</head>
 	<body>
-		<header class="">
-			<div class="navbar-wrapper">
-				<div class="container">
-					<nav class="row navbar navbar-expand-lg flex-custom" >
-						<a class="navbar-brand custom-navbar-brand" href="#">
-							<img src="/dist/img/header_logo.png" alt="Logo">
-						</a>
-						<button class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#custom-navbar" aria-controls="custom-navbar" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="custom-navbar collapse navbar-collapse" id="custom-navbar">
-							<ul class="navbar-nav">
-								<li class="nav-item">
-									<a class="nav-link" href="#">Home</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="#">About</a>
-								</li>
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">Portfolio</a>
-									<ul class="dropdown-menu">
-										<li>
-											<a class="dropdown-item" href="#">Subpage 1</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#">Subpage 2</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#">Subpage 3</a>
-										</li>
-									</ul>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Blog</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Contact</a>
-								</li>
-								<form class="search-bar form-inline">
-									<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-									<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-								  </form>
-								<span class="search-icon nav-link fas fa-search"></span>
-							</ul>
-						</div>
-					</nav>
+		<header>
+			<nav class="navbar navbar-expand-lg">
+				<div class="container d-flex justify-content-between align-items-center">
+					<a class="navbar-brand" href="#">
+						<img src="/dist/img/header_logo.png" alt="Logo">
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-custom" aria-controls="navbarSupportedContent" aria-controls="navbar-custom" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse justify-content-end" id="navbar-custom">
+						<ul class="navbar-nav align-items-center">
+							<li class="nav-item">
+								<a class="nav-link" href="#">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#">About</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" id="dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+								<ul class="dropdown-menu" aria-labelledby="dropdown">
+									<li>
+										<a class="dropdown-item" href="#">Subpage 1</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#">Subpage 2</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#">Subpage 3</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Blog</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Contact</a>
+							</li>
+							<form class="d-flex navbar__form" id="search-bar">
+								<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+								<button class="btn btn-custom me-2" type="submit">Search</button>
+							</form>
+							<span class="search-icon fas fa-search" id="search-icon"></span>
+						</ul>
+					</div>
 				</div>
-			</div>
+			</nav>
 			<div class="breadcrumbs">
 				<div class="container">
 					<div class="breadcrumbs__container row d-flex justify-content-between align-items-center">
@@ -234,10 +230,10 @@
 						</div>
 					</div>
 				</div>
+				<div class="icon to-top" id="to-top">
+					<span class="arrow fa-solid fa-chevron-up fa-2xl"></span>
+				</div>
 			</section>
-			<div class="to-top flex-custom">
-				<span class="arrow fa-solid fa-chevron-up fa-2xl"></span>
-			</div>
 		</footer>
 	</body> 
 </html>

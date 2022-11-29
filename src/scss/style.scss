@@ -43,6 +43,14 @@ a {
   text-decoration: none;
 }
 
+.form-control:focus,
+.form-control:active,
+.btn:focus,
+.navbar-toggler:focus {
+  box-shadow: none;
+  border-color: none;
+}
+
 .title {
   @include text-wide();
 }
@@ -71,6 +79,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.4s;
 
   &--big {
     height: 50px;
@@ -124,6 +133,91 @@ a {
     .subtitle {
       margin-bottom: 10px;
     }
+  }
+}
+
+.navbar {
+  margin: 1rem 0;
+  font-weight: $fontBold;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+
+  &-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(234, 98, 61)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  &-nav {
+    .nav-link {
+      color: $textColor;
+      margin-right: 1rem;
+      margin-left: 1rem;
+      padding: 0 0 0.5rem 0;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        background-color: $thirdAdditionalColor;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+      &:hover {
+        color: $titleColor;
+
+        &:before {
+          transform-origin: left;
+          transform: scaleX(1);
+        }
+      }
+    }
+    .active {
+      color: $titleColor;
+    }
+  }
+  &__form {
+    padding-bottom: 0.5rem;
+    overflow: hidden;
+    width: 0;
+    transition: 0.4s;
+
+    .form-control {
+      font-size: 0.8125rem;
+      font-weight: $fontBold;
+      text-transform: uppercase;
+    }
+
+    .btn-custom {
+      border-width: 1px;
+
+      &:hover {
+        border-color: $thirdAdditionalColor;
+        background-color: $thirdAdditionalColor;
+        color: $secondTextColor;
+        transition: 0.4s;
+      }
+    }
+  }
+
+  .open {
+    width: 250px;
+  }
+
+  .search-icon {
+    padding-bottom: 0.5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .dropdown-item {
+    font-weight: $fontBold;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
   }
 }
 
@@ -206,6 +300,14 @@ a {
   font-size: 1.25rem;
   color: $titleColor;
   text-align: center;
+  transition: 0.4s;
+
+  .btn-custom:hover {
+    border-color: $thirdAdditionalColor;
+    background-color: $thirdAdditionalColor;
+    color: $secondTextColor;
+    transition: 0.4s;
+  }
 }
 
 .follow-us {
@@ -224,6 +326,11 @@ a {
     }
     .icon {
       background-color: rgba($iconColor, 0.4);
+      &:hover {
+        background-color: $thirdAdditionalColor;
+        transition: 0.4s;
+        color: $secondTextColor;
+      }
     }
   }
   &__newsletter {
@@ -256,6 +363,7 @@ a {
   font-size: 0.875rem;
   line-height: 1.57;
   color: $footerParagraphColor;
+  position: relative;
 
   &__content {
     margin-top: 1.875rem;
@@ -291,6 +399,22 @@ a {
   }
 }
 
+.to-top {
+  width: 100%;
+  max-width: 4.375rem;
+  height: 4.375rem;
+  justify-content: center;
+  position: absolute;
+  bottom: 1.875rem;
+  right: 1.875rem;
+  opacity: 0;
+  transition: 0.4s;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 @media (max-width: 1199.98px) {
   .boxes--single {
     .box {
@@ -304,6 +428,16 @@ a {
   }
 }
 @media (max-width: 991.98px) {
+  .navbar {
+    &__form {
+      width: 100%;
+      max-width: 350px;
+    }
+    .search-icon {
+      display: none;
+    }
+  }
+
   .follow-us {
     &__social-media,
     &__newsletter {
